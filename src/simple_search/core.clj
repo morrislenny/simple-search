@@ -57,3 +57,11 @@
 
 (time (random-search knapPI_16_20_1000_1 1000000
 ))
+
+(defn modifyChoices
+  [choices
+   num-flips]
+  (let [choices-size (count (choices))
+        random-choice #(rand-int choices-size)
+        to-flip (repeatedly choices-size random-choice)]
+  ))
