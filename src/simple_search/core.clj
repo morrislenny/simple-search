@@ -58,11 +58,6 @@
 (time (random-search knapPI_16_20_1000_1 1000000
 ))
 
-(defn modifyChoices
-  [choices
-   num-flips]
-  (let []
-  )
 
 (defn rand-choose-index
   [to-flip
@@ -70,27 +65,19 @@
   (loop [random-choice (rand-int choice-size)]
     (if (= (.indexOf to-flip random-choice) 1)
       (recur (rand-int choice-size))
-      (cons random-choice to-flip))))
-
-(rand-choose-index [1 5 8] 20)
-
-(defn random-number-thing
-  [n]
-  (let [random-choice (#(rand-int n))]
-    random-choice))
-
-(random-number-thing 20)
+      (vec (cons random-choice to-flip)))))
 
 
+(defn modifyChoices
+  [choices
+   num-flips]
+  (let [to-flip []
+        i 0]
+    (while (< i 5)
+        (rand-choose-index to-flip (count choices))
+        (inc i))))
 
 
-;;; This is example
-(loop [i 0]
-  (when (< i 5)
-    (println i)
-    (recur (inc i)); loop i will take this value
-))
+(modifyChoices [0 1 0 0 0 0 0 1 1] 5)
 
-
-(assoc [1 2 3] 3 10)
 
