@@ -61,7 +61,36 @@
 (defn modifyChoices
   [choices
    num-flips]
-  (let [choices-size (count (choices))
-        random-choice #(rand-int choices-size)
-        to-flip (repeatedly choices-size random-choice)]
-  ))
+  (let []
+  )
+
+(defn rand-choose-index
+  [to-flip
+   choice-size]
+  (loop [random-choice (rand-int choice-size)]
+    (if (= (.indexOf to-flip random-choice) 1)
+      (recur (rand-int choice-size))
+      (cons random-choice to-flip))))
+
+(rand-choose-index [1 5 8] 20)
+
+(defn random-number-thing
+  [n]
+  (let [random-choice (#(rand-int n))]
+    random-choice))
+
+(random-number-thing 20)
+
+
+
+
+;;; This is example
+(loop [i 0]
+  (when (< i 5)
+    (println i)
+    (recur (inc i)); loop i will take this value
+))
+
+
+(assoc [1 2 3] 3 10)
+
