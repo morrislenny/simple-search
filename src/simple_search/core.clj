@@ -59,23 +59,35 @@
 ))
 
 
+
+
+
 (defn rand-choose-index
   [to-flip
    choice-size]
   (loop [random-choice (rand-int choice-size)]
-    (if (= (.indexOf to-flip random-choice) 1)
+    (if (= (some #(= random-choice %) to-flip) true)
       (recur (rand-int choice-size))
       (vec (cons random-choice to-flip)))))
 
 
+
+(rand-choose-index [2 5 3 7] 10)
+
+(defn rand-choose-indices
+  [num-flips choice-size]
+  (loop [indices []]
+    (if (= num-flips (count indices))
+      indices
+      (recur (rand-choose-index indices choice-size)))))
+
+(rand-choose-indices 5 10)
+
 (defn modifyChoices
   [choices
    num-flips]
-  (let [to-flip []
-        i 0]
-    (while (< i 5)
-        (rand-choose-index to-flip (count choices))
-        (inc i))))
+  (let [to-flip (rand-choose-indices num-flips (count choices))]
+    ))
 
 
 (modifyChoices [0 1 0 0 0 0 0 1 1] 5)
