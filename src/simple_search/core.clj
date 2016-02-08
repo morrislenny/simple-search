@@ -87,7 +87,9 @@
   [choices
    num-flips]
   (let [to-flip (rand-choose-indices num-flips (count choices))]
-    ))
+    (for [x to-flip]
+      (if (= (nth choices x) 1)
+        )
 
 
 (modifyChoices [0 1 0 0 0 0 0 1 1] 5)
