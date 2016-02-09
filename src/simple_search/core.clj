@@ -71,7 +71,13 @@
 )
 
 
-
+(defn make-answer
+  [answer]
+  (let [included (included-items (:items (:instance answer)) (:choices answer))]
+    {:instance (:instance answer)
+     :choices (:choices answer)
+     :total-weight (reduce + (map :weight included))
+     :total-value (reduce + (map :value included))}))
 
 
 (defn rand-choose-index
@@ -121,7 +127,7 @@
         flipped))))
 
 
-(modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 1)
+(modifyChoices (:choices (random-search knapPI_16_20_1000_1 1)) 1)
 
 (= (some #{5} [1 2 3 4]) 5)
 
@@ -132,11 +138,9 @@
     (let [choices (modifyChoices (:choices instance) 1)]
       (assoc-in instance [:choices] choices)))
 
-(insert-updated-choices (random-search knapPI_16_20_1000_1 10))
+(make-answer (insert-updated-choices (random-search knapPI_16_20_1000_1 10)))
 
 
-(refresh-map (assoc-in (random-search knapPI_16_20_1000_1 10) [:choices]
-          (modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 1)))
 
 
 
