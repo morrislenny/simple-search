@@ -27,7 +27,7 @@
                             #(rand-int 2))
         included (included-items (:items instance) choices)]
     {:instance instance
-     :choices choices
+     :choices (vec choices)
      :total-weight (reduce + (map :weight included))
      :total-value (reduce + (map :value included))}))
 
@@ -55,7 +55,7 @@
          (map add-score
               (repeatedly max-tries #(random-answer instance)))))
 
-(time (random-search knapPI_16_20_1000_1 1000000
+(:choices (random-search knapPI_16_20_1000_1 100
 ))
 
 
@@ -81,17 +81,21 @@
       indices
       (recur (rand-choose-index indices choice-size)))))
 
-(rand-choose-indices 5 10)
+(sort (rand-choose-indices 5 10))
 
 (defn modifyChoices
   [choices
    num-flips]
-  (let [to-flip (rand-choose-indices num-flips (count choices))]
-    (for [x to-flip]
-      (if (= (nth choices x) 1)
-        )
+  (let [to-flip (sort (rand-choose-indices num-flips (count choices)))
+        flipped []]
+    (loop [flipped []
+           x 0]
+      (if-not (= x (- (count choices) 1))
+          (if (= (some #{x} to-flip) x) ;;flip at index 1 or 0 to 0 or 1 then add to flipped
+            ) ;;stuff needed here
+        flipped))))
 
 
-(modifyChoices [0 1 0 0 0 0 0 1 1] 5)
+(modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 5)
 
-
+(= (some #{5} [1 2 3 4]) 5)
