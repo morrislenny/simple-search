@@ -34,6 +34,18 @@
 ;;; It might be cool to write a function that
 ;;; generates weighted proportions of 0's and 1's.
 
+(defn refresh-map
+  [instance]
+  (let [choices (:choices instance)
+        included (included-items (:items instance) choices)]
+  {:instance
+   {:capacity (:capacity instance)
+    :items (:items instance)
+     :choices choices
+     :total-weight (reduce + (map :weight included))
+     :total-value (reduce + (map :value included))}}
+  ))
+
 (defn score
   "Takes the total-weight of the given answer unless it's over capacity,
    in which case we return 0."
@@ -55,8 +67,8 @@
          (map add-score
               (repeatedly max-tries #(random-answer instance)))))
 
-(:choices (random-search knapPI_16_20_1000_1 100
-))
+(random-search knapPI_16_20_1000_1 100
+)
 
 
 
@@ -114,3 +126,21 @@
 (= (some #{5} [1 2 3 4]) 5)
 
 (conj [2 3 4 5 6] 1)
+
+(defn insert-updated-choices
+  [instance]
+    (let [choices (modifyChoices (:choices instance) 1)]
+      (assoc-in instance [:choices] choices)))
+
+(insert-updated-choices (random-search knapPI_16_20_1000_1 10))
+
+
+(refresh-map (assoc-in (random-search knapPI_16_20_1000_1 10) [:choices]
+          (modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 1)))
+
+
+
+
+
+
+
