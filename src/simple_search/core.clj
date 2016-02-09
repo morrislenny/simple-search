@@ -86,16 +86,31 @@
 (defn modifyChoices
   [choices
    num-flips]
-  (let [to-flip (sort (rand-choose-indices num-flips (count choices)))
-        flipped []]
+  (let [to-flip (sort (rand-choose-indices num-flips (count choices)))]
+    (println "==================NEW RUN=====================")
+    (println choices)
+    (println to-flip)
     (loop [flipped []
            x 0]
-      (if-not (= x (- (count choices) 1))
+      (if-not (= x (count choices))
           (if (= (some #{x} to-flip) x) ;;flip at index 1 or 0 to 0 or 1 then add to flipped
-            ) ;;stuff needed here
+            (do
+              (print "will flip ")(println x)
+              (if (= (get choices x) 1)
+                (do
+                  (println "changes to 0")
+                  (recur (vec (conj flipped 0)) (inc x)))
+                (do
+                  (println "changes to 1")
+                  (recur (vec (conj flipped 1)) (inc x)))))
+            (do
+              (print "won't flip ")(println x)
+              (recur (vec (conj flipped (get choices x))) (inc x))))
         flipped))))
 
 
-(modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 5)
+(modifyChoices (:choices (random-search knapPI_16_20_1000_1 100)) 1)
 
 (= (some #{5} [1 2 3 4]) 5)
+
+(conj [2 3 4 5 6] 1)
