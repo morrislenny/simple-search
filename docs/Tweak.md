@@ -1,6 +1,6 @@
 Conditions: For each of the six knapPI files:   
-1. We have tested three specific cases 
-2. For each specific case, we tested our algorithm (Best Evolved) 
+1. We have tested three specific cases    
+2. For each specific case, we tested our algorithm (Best Evolved)    
 with configurations as followes:
  - Best of 10 runs of Best Evolved
  - 1000 mutations or generations (whatever you want to call it)
