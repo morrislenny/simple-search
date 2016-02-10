@@ -219,6 +219,51 @@
 
 
 
+;;;Lenny's tests
+
+
+;;;Best Evolved: knapPI_1000_1000.clf
+(:score (best-evolved-search knapPI_11_1000_1000_1 10 1000 100))
+(:score (best-evolved-search knapPI_11_1000_1000_1 10 1000 200))
+(:score (best-evolved-search knapPI_11_1000_1000_15 10 1000 100))
+(:score (best-evolved-search knapPI_11_1000_1000_15 10 1000 200))
+(:score (best-evolved-search knapPI_11_1000_1000_30 10 1000 100))
+(:score (best-evolved-search knapPI_11_1000_1000_30 10 1000 200))
+
+;;;Random: knapPI_1000_1000.clf
+(:score (random-search knapPI_11_1000_1000_1 1000))
+(:score (random-search knapPI_11_1000_1000_15 1000))
+(:score (random-search knapPI_11_1000_1000_30 1000))
+
+;;Best Evolved: knapPI_11_200_1000.clf
+(:score (best-evolved-search knapPI_11_200_1000_1 10 1000 20))
+(:score (best-evolved-search knapPI_11_200_1000_1 10 1000 40))
+(:score (best-evolved-search knapPI_11_200_1000_15 10 1000 20))
+(:score (best-evolved-search knapPI_11_200_1000_15 10 1000 40))
+(:score (best-evolved-search knapPI_11_200_1000_30 10 1000 20))
+(:score (best-evolved-search knapPI_11_200_1000_30 10 1000 40))
+
+;;;Random: knapPI_11_200_1000.clf
+(:score (random-search knapPI_11_200_1000_1 1000))
+(:score (random-search knapPI_11_200_1000_15 1000))
+(:score (random-search knapPI_11_200_1000_30 1000))
+
+;;Best Evolved: knapPI_11_20_1000
+(:score (best-evolved-search knapPI_11_20_1000_1 10 1000 2))
+(:score (best-evolved-search knapPI_11_20_1000_1 10 1000 4))
+(:score (best-evolved-search knapPI_11_20_1000_15 10 1000 2))
+(:score (best-evolved-search knapPI_11_20_1000_15 10 1000 4))
+(:score (best-evolved-search knapPI_11_20_1000_30 10 1000 2))
+(:score (best-evolved-search knapPI_11_20_1000_30 10 1000 4))
+
+;;Random: knapPI_11_20_1000
+(:score (random-search knapPI_11_20_1000_1 1000))
+(:score (random-search knapPI_11_20_1000_15 1000))
+(:score (random-search knapPI_11_20_1000_30 1000))
+
+
+
+
 
 ;;; Just random test things
 ;;;
