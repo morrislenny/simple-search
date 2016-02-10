@@ -1,8 +1,14 @@
 (ns simple-search.core
   (:use simple-search.knapsack-examples.knapPI_11_20_1000
+        simple-search.knapsack-examples.knapPI_11_200_1000
+        simple-search.knapsack-examples.knapPI_11_1000_1000
         simple-search.knapsack-examples.knapPI_13_20_1000
+        simple-search.knapsack-examples.knapPI_13_200_1000
+        simple-search.knapsack-examples.knapPI_13_1000_1000
         simple-search.knapsack-examples.knapPI_16_20_1000
-        simple-search.knapsack-examples.knapPI_16_200_1000))
+        simple-search.knapsack-examples.knapPI_16_200_1000
+        simple-search.knapsack-examples.knapPI_16_1000_1000
+        ))
 
 ;;; An answer will be a map with (at least) four entries:
 ;;;   * :instance
@@ -158,9 +164,58 @@
          (map add-score
               (repeatedly max-tries #(add-score (evolve-answer instance num-mutations num-flips))))))
 
+;;; knapPI_16
+;;;
+;;; Ours
+(:score (best-evolved-search knapPI_16_20_1000_1 10 1000 1))
+(:score (best-evolved-search knapPI_16_20_1000_1 10 1000 4))
+(:score (best-evolved-search knapPI_16_200_1000_13 10 1000 20))
+(:score (best-evolved-search knapPI_16_200_1000_13 10 1000 40))
+(:score (best-evolved-search knapPI_16_1000_1000_5 10 1000 100))
+(:score (best-evolved-search knapPI_16_1000_1000_5 10 1000 200))
 
-(:score (best-evolved-search knapPI_16_20_1000_1 100 100 4))
-(:score (random-search knapPI_16_200_1000_1 10000))
+(:score (best-evolved-search knapPI_16_20_1000_2 10 1000 1))
+(:score (best-evolved-search knapPI_16_20_1000_2 10 1000 4))
+(:score (best-evolved-search knapPI_16_200_1000_14 10 1000 20))
+(:score (best-evolved-search knapPI_16_200_1000_14 10 1000 40))
+(:score (best-evolved-search knapPI_16_1000_1000_6 10 1000 100))
+(:score (best-evolved-search knapPI_16_1000_1000_6 10 1000 200))
+
+;;; Random
+(:score (random-search knapPI_16_20_1000_1 1000))
+(:score (random-search knapPI_16_200_1000_13 1000))
+(:score (random-search knapPI_16_200_1000_5 1000))
+
+(:score (random-search knapPI_16_20_1000_2 1000))
+(:score (random-search knapPI_16_200_1000_14 1000))
+(:score (random-search knapPI_16_200_1000_6 1000))
+
+;;; knapPI_13
+;;;
+;;; Ours
+(:score (best-evolved-search knapPI_13_20_1000_1 10 1000 1))
+(:score (best-evolved-search knapPI_13_20_1000_1 10 1000 4))
+(:score (best-evolved-search knapPI_13_200_1000_13 10 1000 20))
+(:score (best-evolved-search knapPI_13_200_1000_13 10 1000 40))
+(:score (best-evolved-search knapPI_13_1000_1000_5 2 1000 100))
+(:score (best-evolved-search knapPI_13_1000_1000_5 10 1000 200))
+
+(:score (best-evolved-search knapPI_13_20_1000_2 10 1000 1))
+(:score (best-evolved-search knapPI_13_20_1000_2 10 1000 4))
+(:score (best-evolved-search knapPI_13_200_1000_14 10 1000 20))
+(:score (best-evolved-search knapPI_13_200_1000_14 10 1000 40))
+(:score (best-evolved-search knapPI_13_1000_1000_6 2 1000 100))
+(:score (best-evolved-search knapPI_13_1000_1000_6 2 1000 200))
+
+;;; Random
+(:score (random-search knapPI_13_20_1000_1 1000))
+(:score (random-search knapPI_13_200_1000_13 1000))
+(:score (random-search knapPI_13_200_1000_5 1000))
+
+(:score (random-search knapPI_13_20_1000_2 1000))
+(:score (random-search knapPI_13_200_1000_14 1000))
+(:score (random-search knapPI_13_200_1000_6 1000))
+
 
 
 
@@ -171,13 +226,4 @@
 ;;(random-search knapPI_16_20_1000_1 10000)
 ;;(add-score (evolve-answer knapPI_16_20_1000_1 1000 10))
 ;;(add-score (format-answer (insert-updated-choices (random-search knapPI_16_20_1000_1 1))))
-
-
-
-
-
-
-
-
-
 
