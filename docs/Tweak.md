@@ -11,21 +11,20 @@ mutations or generations (Whatever you want to call it)
 
 Results
 
-
 *knapPI_1000_1000.clf*   
 knapPI_1000_1000_1:  <br />
  -Best Evolved (100 Mutations): -158834N   
  -Best Evolved (200 Mutations): -168302N    
  -Random: -196346N   
-knapPI_1000_1000_15:
- -Best Evolved (100 Mutations): -183759N
- -Best Evolved (200 Mutations): -233914N
- -Random: -288574N
+knapPI_1000_1000_15:   
+ -Best Evolved (100 Mutations): -183759N    
+ -Best Evolved (200 Mutations): -233914N     
+ -Random: -288574N     
 
-knapPI_1000_1000_30
-Best Evolved (100 Mutations): -8011N
-Best Evolved (200 Mutations): -21678N
-Random: -41386N
+knapPI_1000_1000_30    
+Best Evolved (100 Mutations): -8011N   
+Best Evolved (200 Mutations): -21678N   
+Random: -41386N    
 
 *knapPI_200_1000.clf*
 knapPI_200_1000_1
