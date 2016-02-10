@@ -20,33 +20,31 @@ knapPI_1000_1000_15:
  -Best Evolved (100 Mutations): -183759N    
  -Best Evolved (200 Mutations): -233914N     
  -Random: -288574N     
-
 knapPI_1000_1000_30    
 Best Evolved (100 Mutations): -8011N   
 Best Evolved (200 Mutations): -21678N   
 Random: -41386N    
 
-*knapPI_200_1000.clf*
-knapPI_200_1000_1
-Best Evolved (20 Mutations): -17529N
-Best Evolved (40 Mutations): -22303N
-Random: -33122N
-knapPI_200_1000_15
-Best Evolved (20 Mutations): -10397N
-Best Evolved (40 Mutations): -22968N
-Random: -41980N
-
-knapPI_200_1000_30
-Best Evolved (20 Mutations): 51678N
-Best Evolved (40 Mutations): 45180N
-Random: -4018N
+*knapPI_200_1000.clf*   
+knapPI_200_1000_1   
+Best Evolved (20 Mutations): -17529N  
+Best Evolved (40 Mutations): -22303N  
+Random: -33122N  
+knapPI_200_1000_15  
+Best Evolved (20 Mutations): -10397N  
+Best Evolved (40 Mutations): -22968N  
+Random: -41980N  
+knapPI_200_1000_30   
+Best Evolved (20 Mutations): 51678N   
+Best Evolved (40 Mutations): 45180N   
+Random: -4018N  
 
 *knapPI_20_1000.clf*
-knapPI_20_1000_1
-Best Evolved (2 Mutations): 1428N
-Best Evolved (4 Mutations): 1428N
-Random: 624N
-knapPI_20_1000_15
+knapPI_20_1000_1   
+Best Evolved (2 Mutations): 1428N   
+Best Evolved (4 Mutations): 1428N   
+Random: 624N   
+knapPI_20_1000_15  
 Best Evolved (2 Mutations): 2786N
 Best Evolved (4 Mutations): 2786N
 Random: -435N
