@@ -41,17 +41,17 @@ knapPI_200_1000_30
 
 *knapPI_20_1000.clf*
 knapPI_20_1000_1   
-Best Evolved (2 Mutations): 1428N   
-Best Evolved (4 Mutations): 1428N   
-Random: 624N   
-knapPI_20_1000_15  
-Best Evolved (2 Mutations): 2786N
-Best Evolved (4 Mutations): 2786N
-Random: -435N
-knapPI_20_1000_30
-Best Evolved (2 Mutations): 5635N
-Best Evolved (4 Mutations): 5635N
-Random: 4913N
+ -Best Evolved (2 Mutations): 1428N   
+ -Best Evolved (4 Mutations): 1428N    
+ -Random: 624N   
+knapPI_20_1000_15    
+ -Best Evolved (2 Mutations): 2786N  
+ -Best Evolved (4 Mutations): 2786N  
+ -Random: -435N  
+knapPI_20_1000_30  
+ -Best Evolved (2 Mutations): 5635N  
+ -Best Evolved (4 Mutations): 5635N  
+ -Random: 4913N  
 
 
 knapPI_16_20_1000_1
