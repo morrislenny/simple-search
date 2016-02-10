@@ -9,14 +9,14 @@ with configurations as followes:
 3. For each specific case, we tested the random-search with 1000
 mutations or generations (Whatever you want to call it)
 
+Results
 
-*knapPI_1000_1000.clf*
 
-
+*knapPI_1000_1000.clf*   
 knapPI_1000_1000_1:  <br />
- -Best Evolved (100 Mutations): -158834N
- -Best Evolved (200 Mutations): -168302N
- -Random: -196346N
+ -Best Evolved (100 Mutations): -158834N   
+ -Best Evolved (200 Mutations): -168302N    
+ -Random: -196346N   
 knapPI_1000_1000_15:
  -Best Evolved (100 Mutations): -183759N
  -Best Evolved (200 Mutations): -233914N
