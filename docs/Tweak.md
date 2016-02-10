@@ -13,7 +13,7 @@ mutations or generations (Whatever you want to call it)
 *knapPI_1000_1000.clf*
 
 
-knapPI_1000_1000_1: \n
+knapPI_1000_1000_1: "\n"
  -Best Evolved (100 Mutations): -158834N
  -Best Evolved (200 Mutations): -168302N
  -Random: -196346N
