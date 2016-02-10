@@ -53,7 +53,7 @@ knapPI_20_1000_30
  -Best Evolved (4 Mutations): 5635N  
  -Random: 4913N  
 
-
+*Best Evolved*
 knapPI_16_20_1000_1   
 2176 		-with 1/10 randomly flipped mutations   
 2239 		-with 2/5 randomly flipped mutations   
