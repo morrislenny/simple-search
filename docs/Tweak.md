@@ -7,7 +7,7 @@ with configurations as followes:
  - one mutation rate of 1/10th the size of the total knapsack size
  - one mutation rate of 1/5th the size of the toatl knapsack size 
 
-3. (This is supposed to number 3 not 1: grrrr md files!) For each specific case, we tested the random-search with 1000
+3. (This is supposed to benumber 3, not 1: grrrr md files!) For each specific case, we tested the random-search with 1000
 mutations or generations (Whatever you want to call it) (Look at the raw file, there is a number threee!)
 
 Results
