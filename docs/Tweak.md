@@ -55,65 +55,64 @@ knapPI_20_1000_30
 
 
 knapPI_16_20_1000_1   
- -2176 		-with 1/10 randomly flipped mutations   
- -2239 		-with 2/5 randomly flipped mutations   
+2176 		-with 1/10 randomly flipped mutations   
+2239 		-with 2/5 randomly flipped mutations   
 knapPI_16_200_1000_13
- -24172 		-with 1/10 randomly flipped mutations
- --11694 	-with 2/5 randomly flipped mutations
-knapPI_16_1000_1000_5
--152982 	-with 1/10 randomly flipped mutations
--173151 	-with 2/5 randomly flipped mutations
-knapPI_16_20_1000_2
-1971 		-with 1/10 randomly flipped mutations
-2260 		-with 2/5 randomly flipped mutations
-knapPI_16__200_14
--3173 		-with 1/10 randomly flipped mutations
--9665 		-with 2/5 randomly flipped mutations
-knapPI_16_20_1000_6
--14625 	-with 1/10 randomly flipped mutations
--167244  	-with 2/5 randomly flipped mutations
-knapPI_13_20_1000_1
-1677		-with 1/10 randomly flipped mutations
-1677		-with 2/5 randomly flipped mutations
-knapPI_13_200_1000_13
--9279		-with 1/10 randomly flipped mutations
--21843		-with 2/5 randomly flipped mutations
-knapPI_13_1000_1000_5
--95548		-with 1/10 randomly flipped mutations
--111487	-with 2/5 randomly flipped mutations
-knapPI_13_20_1000_2
-2372		-with 1/10 randomly flipped mutations
-2501		-with 2/5 randomly flipped mutations
-knapPI_13_200_1000_14
--7044		-with 1/10 randomly flipped mutations
--2027		-with 2/5 randomly flipped mutations
-knapPI_13_1000_1000_6
--184244	-with 1/10 randomly flipped mutations
--210510	-with 2/5 randomly flipped mutations
+24172 		-with 1/10 randomly flipped mutations
+-11694 	-with 2/5 randomly flipped mutations
+knapPI_16_1000_1000_5   
+-152982 	-with 1/10 randomly flipped mutations  
+-173151 	-with 2/5 randomly flipped mutations  
+knapPI_16_20_1000_2  
+1971 		-with 1/10 randomly flipped mutations  
+2260 		-with 2/5 randomly flipped mutations  
+knapPI_16__200_14  
+-3173 		-with 1/10 randomly flipped mutations  
+-9665 		-with 2/5 randomly flipped mutations  
+knapPI_16_20_1000_6  
+-14625 	-with 1/10 randomly flipped mutations  
+-167244  	-with 2/5 randomly flipped mutations  
+knapPI_13_20_1000_1  
+1677		-with 1/10 randomly flipped mutations  
+1677		-with 2/5 randomly flipped mutations  
+knapPI_13_200_1000_13  
+-9279		-with 1/10 randomly flipped mutations  
+-21843		-with 2/5 randomly flipped mutations  
+knapPI_13_1000_1000_5  
+-95548		-with 1/10 randomly flipped mutations  
+-111487	-with 2/5 randomly flipped mutations  
+knapPI_13_20_1000_2  
+2372		-with 1/10 randomly flipped mutations  
+2501		-with 2/5 randomly flipped mutations  
+knapPI_13_200_1000_14  
+-7044		-with 1/10 randomly flipped mutations  
+-2027		-with 2/5 randomly flipped mutations  
+knapPI_13_1000_1000_6  
+-184244	-with 1/10 randomly flipped mutations  
+-210510	-with 2/5 randomly flipped mutations  
 
-
-Random
-knapPI_16_20_1000_1
--1024
-knapPI_16_200_1000_13
--2206
-knapPI_16_1000_1000_5
--32626
-knapPI_16_20_1000_2
-1565
-knapPI_16_200_1000_14
--2403
-knapPI_16_1000_1000_6
--30338
-knapPI_13_20_1000_1
-1248
-knapPI_13_200_1000_13
--39089
-knapPI_13_1000_1000_5
--19336
-knapPI_13_20_1000_2
-2318
-knapPI_13_200_1000_14
--38432
-knapPI_13_1000_1000_6
--36587
+*Random*  
+knapPI_16_20_1000_1  
+-1024  
+knapPI_16_200_1000_13  
+-2206  
+knapPI_16_1000_1000_5  
+-32626  
+knapPI_16_20_1000_2  
+1565  
+knapPI_16_200_1000_14  
+-2403  
+knapPI_16_1000_1000_6  
+-30338  
+knapPI_13_20_1000_1  
+1248  
+knapPI_13_200_1000_13  
+-39089  
+knapPI_13_1000_1000_5  
+-19336  
+knapPI_13_20_1000_2  
+2318  
+knapPI_13_200_1000_14  
+-38432  
+knapPI_13_1000_1000_6  
+-36587  
