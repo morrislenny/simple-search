@@ -167,6 +167,7 @@
 ;;; knapPI_16
 ;;;
 ;;; Ours
+"
 (:score (best-evolved-search knapPI_16_20_1000_1 10 1000 1))
 (:score (best-evolved-search knapPI_16_20_1000_1 10 1000 4))
 (:score (best-evolved-search knapPI_16_200_1000_13 10 1000 20))
@@ -260,7 +261,7 @@
 (:score (random-search knapPI_11_20_1000_1 1000))
 (:score (random-search knapPI_11_20_1000_15 1000))
 (:score (random-search knapPI_11_20_1000_30 1000))
-
+"
 
 
 
