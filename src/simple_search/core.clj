@@ -1,7 +1,8 @@
 (ns simple-search.core
   (:use simple-search.knapsack-examples.knapPI_11_20_1000
         simple-search.knapsack-examples.knapPI_13_20_1000
-        simple-search.knapsack-examples.knapPI_16_20_1000))
+        simple-search.knapsack-examples.knapPI_16_20_1000
+        simple-search.knapsack-examples.knapPI_16_200_1000))
 
 ;;; An answer will be a map with (at least) four entries:
 ;;;   * :instance
@@ -155,11 +156,11 @@
   [instance max-tries num-mutations num-flips]
   (apply max-key :score
          (map add-score
-              (repeatedly max-tries #(add-score (evolve-answer knapPI_16_20_1000_1 num-mutations num-flips))))))
+              (repeatedly max-tries #(add-score (evolve-answer instance num-mutations num-flips))))))
 
 
-(best-evolved-search knapPI_16_20_1000_1 1 10000 4)
-(random-search knapPI_16_20_1000_1 10000)
+(:score (best-evolved-search knapPI_16_20_1000_1 100 100 4))
+(:score (random-search knapPI_16_200_1000_1 10000))
 
 
 
