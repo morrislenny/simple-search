@@ -1,4 +1,4 @@
-Conditions: For each of the six knapPI files: 
+Conditions: For each of the six knapPI files:   
 1. We have tested three specific cases 
 2. For each specific case, we tested our algorithm (Best Evolved) 
 with configurations as followes:
