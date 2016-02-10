@@ -15,16 +15,13 @@ Results:
 *knapPI_1000_1000.clf*
 
 knapPI_1000_1000_1
-
-Best Evolved (100 Mutations): -158834N
-
-Best Evolved (200 Mutations): -168302N
-Random: -196346N
-
+-Best Evolved (100 Mutations): -158834N
+-Best Evolved (200 Mutations): -168302N
+-Random: -196346N
 knapPI_1000_1000_15
-Best Evolved (100 Mutations): -183759N
-Best Evolved (200 Mutations): -233914N
-Random: -288574N
+-Best Evolved (100 Mutations): -183759N
+-Best Evolved (200 Mutations): -233914N
+-Random: -288574N
 
 knapPI_1000_1000_30
 Best Evolved (100 Mutations): -8011N
