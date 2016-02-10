@@ -55,11 +55,11 @@ knapPI_20_1000_30
 
 
 knapPI_16_20_1000_1   
-2176 		-with 1/10 randomly flipped mutations   
-2239 		-with 2/5 randomly flipped mutations   
+ -2176 		-with 1/10 randomly flipped mutations   
+ -2239 		-with 2/5 randomly flipped mutations   
 knapPI_16_200_1000_13
-24172 		-with 1/10 randomly flipped mutations
--11694 	-with 2/5 randomly flipped mutations
+ -24172 		-with 1/10 randomly flipped mutations
+ --11694 	-with 2/5 randomly flipped mutations
 knapPI_16_1000_1000_5
 -152982 	-with 1/10 randomly flipped mutations
 -173151 	-with 2/5 randomly flipped mutations
