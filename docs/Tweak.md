@@ -5,7 +5,7 @@ with configurations as followes:
  - Best of 10 runs of Best Evolved
  - 1000 mutations or generations (whatever you want to call it)
  - one mutation rate of 1/10th the size of the total knapsack size
- - one mutation rate of 1/5th the size of the toatl knapsack size   
+ - one mutation rate of 1/5th the size of the toatl knapsack size <br />  
 3. For each specific case, we tested the random-search with 1000
 mutations or generations (Whatever you want to call it)
 
