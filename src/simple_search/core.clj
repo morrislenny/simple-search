@@ -164,6 +164,17 @@
          (map add-score
               (repeatedly max-tries #(add-score (evolve-answer instance num-mutations num-flips))))))
 
+(defn best-evolved-with-rand-restarts
+  "Takes instance, number of mutations, and rate of mutations, and a number of restarts.
+  Returns the highest value solution."
+  [instance num-mutations num-flips num-restarts]
+    (apply max-key :score (repeatedly num-restarts #(best-evolved-search instance 1 num-mutations num-flips))))
+
+
+(best-evolved-with-rand-restarts knapPI_16_20_1000_1 2000 4 8)
+
+;;(apply max-key :score (repeatedly 5 #(best-evolved-search knapPI_16_20_1000_1 10 1000 1)))
+
 ;;; knapPI_16
 ;;;
 ;;; Ours
