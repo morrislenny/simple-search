@@ -13,7 +13,7 @@
   (for [searcher searchers
         p problems
         n (range num-replications)]
-    (let [answer (searcher p max-evals)]
+    (let [answer (future (searcher p max-evals))]
       {:searcher searcher
        :problem p
        :max-evals max-evals
@@ -27,7 +27,7 @@
              (:label (:problem result))
              (:max-evals result)
              (:run-number result)
-             (:score (:answer result)))))
+             (:score @(:answer result)))))
 
 ;; This really shouldn't be necessary, as I should have included the labels
 ;; in the maps when generated the problem files. Unfortunately I only just
@@ -56,10 +56,10 @@
   (ns simple-search.experiment)
   (print-experimental-results
    (run-experiment [(with-meta
-                      (partial core/random-restarts 1000 4 5)
+                      (partial core/random-restarts 2 5)
                       {:label "hill_climber_with_restarts"})
                     (with-meta
-                      (partial core/hill-climber 1000 4)
+                      (partial core/hill-climber 2)
                       {:label "hill_climber"})
                     (with-meta
                       (partial core/random-search)

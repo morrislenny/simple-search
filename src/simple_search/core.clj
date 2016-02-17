@@ -156,43 +156,34 @@
 
 
 
-(defn best-evolved-search
-  "Takes instance, attempts, number of mutations, and rate of mutations.
-  Returns the best answer of the attempts."
-  [num-mutations num-flips instance max-tries]
-  (apply max-key :score
-         (map add-score
-              (repeatedly max-tries #(add-score (evolve-answer instance num-mutations num-flips))))))
+;;; =======================Important functions==============================
 
 
 (defn hill-climber
   "Takes instance, attempts, number of mutations, and rate of mutations.
   Returns the best answer of the attempts."
-  [num-mutations num-flips instance max-tries]
-        (apply max-key :score
-               (map add-score
-                (repeatedly max-tries #(add-score (evolve-answer instance num-mutations num-flips))))))
+  [num-flips instance num-mutations]
+    (evolve-answer instance num-mutations num-flips))
 
-
-
-(defn best-evolved-with-rand-restarts
-  "Takes instance, number of mutations, and rate of mutations, and a number of restarts.
-  Returns the highest value solution."
-  [instance num-mutations num-flips num-restarts]
-    (apply max-key :score (repeatedly num-restarts #(best-evolved-search num-mutations num-flips instance 1))))
 
 
 
 
 (defn random-restarts
-  [num-mutations num-flips num-restarts instance max-tries]
-    (apply max-key :score (repeatedly max-tries #(best-evolved-with-rand-restarts instance num-mutations num-flips num-restarts))))
+  "Takes instance, number of mutations, and rate of mutations, and a number of restarts.
+  Returns the highest value solution."
+  [num-flips num-restarts instance num-mutations]
+    (apply max-key :score (repeatedly num-restarts #(hill-climber num-flips instance num-mutations))))
 
 
-(hill-climber 1000 4 knapPI_13_20_1000_7 5)
-(random-restarts 100 4 5 knapPI_11_20_1000_8 3)
 
-;;(apply max-key :score (repeatedly 5 #(best-evolved-search knapPI_16_20_1000_1 10 1000 1)))
+
+;;;(best-evolved-search 2 knapPI_16_20_1000_7 10000)
+
+;;;(best-evolved-with-rand-restarts 4 5 knapPI_16_20_1000_7 2000)
+
+;;;(random-search knapPI_16_20_1000_7 10000)
+
 
 ;;; knapPI_16
 ;;;
