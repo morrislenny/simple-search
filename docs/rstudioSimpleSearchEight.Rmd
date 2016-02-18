@@ -10,7 +10,7 @@ output: html_document
 First let's load up the data with just 5 runs per treatment.
 
 ```{r}
-data_5_runs <- read.csv("simpleResultTwo.txt", sep="")
+data_5_runs <- read.csv("simpleResultEight.txt", sep="")
 ```
 
 Now let's plot the score as a function of the search method.
@@ -41,7 +41,7 @@ One of the nifty things about evolutionary computation, though, is that we can u
 So let's load up data where we did _50_ runs for each treatment, and plot those results.
 
 ```{r}
-data_50_runs <- read.csv("simpleResultFour.txt", sep="")
+data_50_runs <- read.csv("simpleResultEight.txt", sep="")
 
 plot(data_50_runs$Score ~ data_50_runs$Search_method,
      xlab="Searcher", ylab="Score")
