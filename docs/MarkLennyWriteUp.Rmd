@@ -1,0 +1,112 @@
+---
+title: "MarkLennyWriteUp"
+author: "Mark and Lenny"
+date: "February 21, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+In our expierements, we are testing the performance of EC based knapsack solutions compared to a random search solution. We are also testing the effects of various permutation rates withing our EC solutions.  
+
+Our score returns the total-value of a given selection of items unless it is overweight. If the selection is overweight, our score returns the capacity minus the total-weight. The overweight score reflects the magnitude to which the selection of items is overweight as a negative number.
+
+We are using a random search as a benchmark to compare the progress of our EC solutions.  Random search takes an instance (knapsack problem) and a number of max-tries.  Max-tries is the maximum number or solutions the random search will produces within a single run.  The random search will generate a random solution to the knapsack and adds the solution and score to a hashtable.  When the run is complete, it will return the highest scoring solution among the hashtable.
+
+Our EC solutions manipulate the choice of items, otherwise referred to as a tweak. Each tweak consists of randomly mutating a series of choices. The number of mutations per generation is set by an argument called mutation rate. Our tweak creates a list of random and unique indices of the available choices. This then swaps (0 to 1, 1 to 0) at the indices given by our list. One of the EC solutions has random restarts, the others do not.  The random restart will store a winning solution after a given number of mutations and then restart with a random set of choices.  In this particular set of expirements, there will be five random restarts in every run. This encourages the algorithm to find the global optima, rather than just the local optima.
+
+
+# Experimental Setup
+
+We set three permutation rates, two, four, and eight, to our EC solutions.  For each mutation rate set up, we tested our EC solution with and without random restarts.  In each of these tests, we compared our EC results to that of random searches results.  We test all of the these searches on these knapsack problems: 
+
+* `knapPI_11_20_1000_4`
+* `knapPI_13_20_1000_4` 
+* `knapPI_16_20_1000_4`
+* `knapPI_11_200_1000_4`
+* `knapPI_13_200_1000_4`
+* `knapPI_16_200_1000_4`
+
+In each test we did 30 runs, each containing 100,000 max-tries.
+
+# Results
+## A basic comparison of the searcher (including Mutation Rates)
+NOTE: In the following graphs, we refer to our EC Solution, without restarts, as `hill_climber`. We also refer to our EC Solution, with restarts, as `hill_climber_with_restarts`. 
+
+```{r}
+data_50_runs <- read.csv("simpleResultTwo.txt", sep="")
+
+plot(data_50_runs$Score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 2")
+```
+
+```{r}
+data_50_runs <- read.csv("simpleResultFour.txt", sep="")
+
+plot(data_50_runs$Score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 4")
+```
+
+```{r}
+data_50_runs <- read.csv("simpleResultEight.txt", sep="")
+
+plot(data_50_runs$Score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 8")
+```
+
+
+## Scores are floored to zero
+Because our scoring mechanism allowed for negative scores, some of the algorithms, particularly, `random_search` had a significant amounts of data below zero. Because these solutions are illegal, we generated a new set of box-plots that only observe legal solutions to the knapsack problem. 
+
+```{r}
+data_50_runs$Non_negative_score = ifelse(data_50_runs$Score<0, 0, data_50_runs$Score)
+
+plot(data_50_runs$Non_negative_score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 2")
+```
+
+```{r}
+data_50_runs$Non_negative_score = ifelse(data_50_runs$Score<0, 0, data_50_runs$Score)
+
+plot(data_50_runs$Non_negative_score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 4")
+```
+
+```{r}
+data_50_runs$Non_negative_score = ifelse(data_50_runs$Score<0, 0, data_50_runs$Score)
+
+plot(data_50_runs$Non_negative_score ~ data_50_runs$Search_method,
+     xlab="Searcher", ylab="Score", main="Mutation Rate: 8")
+```
+
+From our results in these three box-plots. We can see that the variation in mutation-rate, does not have statistical significants. The variation in mutation rates are not significant because there is a miniscule difference in results but in mutation rate two, we noticed a higher significant max-line. This may be the result of extranious outliers that effect the box-plot. It is also worth noting that the sheer volume of mutations done in these expirements (100,000 mutations), may have stifled the effect of varation in mutation rate. 
+
+Within each subset of mutation rate expirements, we have observed several differences between our three search algorithms. When observing `random_search` versus the EC solutions, we notice that in all three sets of expirements (including negative results), the median of the `random_search` is below zero. Even when we floor the results to zero, the `random_search` trails behind the EC solutions' results. In all of our expirements, we can say with confidence that our EC implimations perform better than `random_search`. When we observe the EC solutions, with and without restarts, we notice a slight, statistically irrelevent, higher score for the EC solution with restarts. For example, when the results are floored to zero, we can notice that our EC solution with restarts has a higher signicant minimum; in all experiments, compared to our EC solution without restarts.
+
+##How do things change by problem?
+
+```{r}
+plot(data_50_runs$Non_negative_score ~ data_50_runs$Problem,
+     xlab="Searcher", ylab="Score", main="Average Score, vs. Knapsack Problem")
+```
+
+When we obseve the result of all the algorithms used (`random_search`, EC without restarts, EC with restarts) for each knapsack problem, we notice that more difficult problems have a high deviation of results. We also observe that the medians on the 200 item knapsack problems are significantly higer. This may be the result of doing enough mutations per run to the point that we reach more high scores than low. 
+
+```{r warning=FALSE}
+library("ggplot2")
+
+ggplot(data_50_runs, 
+       aes(x=factor(Max_evals), y=Non_negative_score, group=Max_evals)) + 
+  geom_boxplot() + facet_grid(Search_method ~ Problem)
+```
+
+We observe that both of our EC solutions perform better than `random_search` on the 200 item Knapsack problems.  Most of the time, it appears that `random_search` median is floored at zero.  On the 20 item Knapsack problems, it does appear that the EC solution competes slightly better than the `random_search`. 
+
+# Conclusions
+From our analysis, we can note that it does not appear that variations in the mutation rate have any, if little, signficants in our final results. One of the most noticable observations we made was that our EC solutions performed better in every expirement than the `random_search`. When we compare our EC solutions, with and without random restarts, we note that while there is a slight advantage to using restarts, the effects a marginal and statisticaly insignificant. 
+
+Some of our results might have been obscured by the sheer volume of mutations that we have implemented(100,000). This could have negated some of the differences between results of mutation rates and random restarts. Having such a high maximum mutation would allow more primative EC solutions to reach the local or global optimas when in reality it might have taken them substantialy more mutations to get there. For example, `random_search` might have been able to reach a global optima in 70,000 mutations while an EC solution with restarts might have only taken 150 mutations to get to global optima
